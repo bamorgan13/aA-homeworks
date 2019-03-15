@@ -20,11 +20,11 @@ class Map
     end
 
     def delete(key)
-
+        @map.reject!{|ele| ele[0] == key}
     end
 
     def show
-        
+        @map
     end
 
 end
