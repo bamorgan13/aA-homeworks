@@ -12,9 +12,15 @@ class Board
   end
 
   def valid_move?(start_pos)
+    valid_range = (0..5).to_a + (7..12).to_a
+    raise "Invalid starting cup" unless valid_range.include?(start_pos)
+    raise "Starting cup is empty" if self.cups[start_pos] == []
+    true
   end
 
   def make_move(start_pos, current_player_name)
+    current_stones, cups[start_pos] = cups[start_pos], []
+    render
   end
 
   def next_turn(ending_cup_idx)
