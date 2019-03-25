@@ -39,3 +39,11 @@ def clever(fish) #O(n)
     fish.each {|ele| longest = ele if ele.length > longest.length}
     longest
 end
+
+#tiles_array = ["up", "right-up", "right", "right-down", "down", "left-down", "left",  "left-up" ]
+
+def slow_dance(direction, tiles_array) #O(n)
+    tiles_array.each_with_index do |tile, index|
+        return index if tile == direction
+    end
+end
