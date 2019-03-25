@@ -33,3 +33,9 @@ def merge(left, right)
     end
     merged + left + right
 end
+
+def clever(fish) #O(n)
+    longest = fish.first
+    fish.each {|ele| longest = ele if ele.length > longest.length}
+    longest
+end
