@@ -8,3 +8,28 @@ def sluggish(fish) #O(n^2)
         return fish_1 if fish_1.length == longest
     end
 end
+
+def dominant(fish) #O(nlogn)
+    sorted = merge_sort(fish)
+    sorted.first
+end
+
+def merge_sort(arr)
+    return arr if arr.length <= 1
+    midpoint = arr.length / 2
+    sorted_left = merge_sort(arr[0...midpoint])
+    sorted_right = merge_sort(arr[midpoint..-1])
+    merge(sorted_left, sorted_right)
+end
+
+def merge(left, right)
+    merged = []
+    until left.empty? || right.empty?
+        if left.first <= right.first
+            merged << left.shift
+        else
+            merged << right.shift
+        end
+    end
+    merged + left + right
+end
