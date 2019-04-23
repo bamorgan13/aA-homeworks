@@ -6,6 +6,7 @@ function mysteryScoping1() {
     }
     console.log(x);
 }
+mysteryScoping1();
 
 function mysteryScoping2() {
     const x = 'out of block';
